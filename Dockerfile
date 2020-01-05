@@ -10,6 +10,6 @@ RUN dnf install -y kicad xorg-x11-server-Xvfb unzip ; \
     rm -rf /var/cache ; \
     curl -L -o kicadibom.zip https://github.com/tamisoft/InteractiveHtmlBom/archive/s3storage.zip ; \
     unzip kicadibom.zip && mv InteractiveHtmlBom-s3storage InteractiveHtmlBom ; \
-    chmod +x /bin/create-ibom.sh
+    rm -f kicadibom.zip ; chmod +x /bin/create-ibom.sh
 
 ENTRYPOINT ["/bin/create-ibom.sh"]
